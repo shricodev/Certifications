@@ -10,9 +10,8 @@ def check_disk_usage(disk):
     return free > 20
 
 def check_cpu_usage():
-    """Verifies that there's enough unused CPU"""
     usage = psutil.cpu_percent(1)
-    return usage <75
+    return usage < 75
 
 if not check_disk_usage('/') or not check_cpu_usage():
     print("ERROR!")
